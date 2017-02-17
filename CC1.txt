@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="showOdds()">Show Odds</button>
+<p id="demo1"></p>
+<script>
+
+function showOdds() {
+var myArr=[1,2,3,4,5,6,7,8];
+var t = myArr.filter(function(item) { 
+    if (item% 2 != 0) return item; 
+});
+document.getElementById('demo1').innerHTML = t.toString();
+}
+
+</script>
+</body>
+</html>

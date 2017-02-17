@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="pascalsTriangle(6)">Show Pascal</button>
+<p id="demo2"></p>
+
+<script>
+
+function value(row, index) {
+    if (index < 0 || index > row) {
+        return 0;
+    }
+    if (index === 1 || index === row) {
+        return 1;
+    }
+    return value(row - 1, index - 1) + value(row - 1, index);
+}
+
+function row(n) {
+	var r = [];
+    for (var i = 1; i <= n; i++) {
+        r.push(value(n, i));
+    }
+    return r;
+}
+
+function pascalsTriangle(n) {
+var html = '';
+    for (var i=1; i <= n; i++) {
+       html += row(i) +'<br>';
+    }
+	 document.getElementById('demo2').innerHTML = html;
+}
+
+//pascalsTriangle(6);
+</script>
+</body>
+</html>
